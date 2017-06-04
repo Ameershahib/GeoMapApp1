@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_debug" default="compile.module.debug">
+  <dirname property="module.debug.basedir" file="${ant.file.module_debug}"/>
+  
+  <property name="module.jdk.home.debug" value="${jdk.home.android_api_21_platform}"/>
+  <property name="module.jdk.bin.debug" value="${jdk.bin.android_api_21_platform}"/>
+  <property name="module.jdk.classpath.debug" value="jdk.classpath.android_api_21_platform"/>
+  
+  <property name="compiler.args.debug" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="debug.output.dir" value="${module.debug.basedir}/../../../../../../../../out/production/debug"/>
+  <property name="debug.testoutput.dir" value="${module.debug.basedir}/../../../../../../../../out/test/debug"/>
+  
+  <path id="debug.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="debug.module.production.classpath">
+    <path refid="${module.jdk.classpath.debug}"/>
+  </path>
+  
+  <path id="debug.runtime.production.module.classpath">
+    <pathelement location="${debug.output.dir}"/>
+  </path>
+  
+  <path id="debug.module.classpath">
+    <path refid="${module.jdk.classpath.debug}"/>
+    <pathelement location="${debug.output.dir}"/>
+  </path>
+  
+  <path id="debug.runtime.module.classpath">
+    <pathelement location="${debug.testoutput.dir}"/>
+    <pathelement location="${debug.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.debug">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.debug">
+    <patternset refid="excluded.from.module.debug"/>
+  </patternset>
+  
+  <path id="debug.module.sourcepath">
+    <dirset dir="${module.debug.basedir}">
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.debug" depends="compile.module.debug.production,compile.module.debug.tests" description="Compile module debug"/>
+  
+  <target name="compile.module.debug.production" depends="register.custom.compilers" description="Compile module debug; production classes">
+    <mkdir dir="${debug.output.dir}"/>
+    <javac2 destdir="${debug.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.debug}/javac">
+      <compilerarg line="${compiler.args.debug}"/>
+      <bootclasspath refid="debug.module.bootclasspath"/>
+      <classpath refid="debug.module.production.classpath"/>
+      <src refid="debug.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.debug"/>
+    </javac2>
+    
+    <copy todir="${debug.output.dir}">
+      <fileset dir="${module.debug.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.debug.tests" depends="register.custom.compilers,compile.module.debug.production" description="compile module debug; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.debug" description="cleanup module">
+    <delete dir="${debug.output.dir}"/>
+    <delete dir="${debug.testoutput.dir}"/>
+  </target>
+</project>

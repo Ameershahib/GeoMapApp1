@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item
+        android:id="@+id/more"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Exit"
+        android:icon="@drawable/home"/>
+    
+   <item
+        android:id="@+id/exit"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="Exit"
+        android:icon="@drawable/exit"
+        />
+   
+</menu>

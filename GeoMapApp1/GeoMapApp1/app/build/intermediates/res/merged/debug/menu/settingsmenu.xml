@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    
+      
+    <item
+    android:title="ok"
+    android:id="@+id/settingSave"
+    android:alphabeticShortcut="a"
+    android:icon="@drawable/correct"
+    android:showAsAction="always"/>
+
+       <item
+    android:title="cancel"
+    android:id="@+id/settingCancel"
+    android:numericShortcut="4"
+    android:alphabeticShortcut="a"
+    android:icon="@drawable/cross"
+    android:showAsAction="always"/>
+       
+</menu>
+<!-- From: file:/C:/Users/DILAN/Downloads/Geo%20map/GeoMapApp1/GeoMapApp1/app/src/main/res/menu/settingsmenu.xml -->

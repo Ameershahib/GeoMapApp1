@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.4.52\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3dfdf1db5ce5ea2999a5dcde8c8e650b02660059">
+        <dex dex="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\build\intermediates\pre-dexed\debug\classes-a689b8b269f0801dfc04adbe89f8993cf6e9b71d.jar" />
+    </item>
+    <item
+        jar="C:\Users\DILAN\Desktop\APEX\ADT Bundle\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-7ecd8af92d111cfc75674d1094da26f11dc237d6.jar" />
+    </item>
+    <item
+        jar="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\libs\additionnal.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\build\intermediates\pre-dexed\debug\additionnal-2896afc163ac196aec1eea914eff737c5517e228.jar" />
+    </item>
+    <item
+        jar="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\libs\mail.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\build\intermediates\pre-dexed\debug\mail-027721a416220505c05fe188e12058042cff7c9b.jar" />
+    </item>
+    <item
+        jar="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\libs\activation.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="C:\Users\DILAN\Downloads\Geo map\GeoMapApp1\GeoMapApp1\app\build\intermediates\pre-dexed\debug\activation-0ba70729c5a0d4a637bcef15f186ca15e28213bb.jar" />
+    </item>
+
+</items>

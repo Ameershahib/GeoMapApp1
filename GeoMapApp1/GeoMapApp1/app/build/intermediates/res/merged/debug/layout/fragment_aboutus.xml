@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#DEDEDE" >
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" >
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Company Name: Osmium pvt Ltd"
+                android:id="@+id/textView2"
+                android:layout_marginTop="80dp"
+                />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="15dp"
+                android:text="At osmium,we listen.We think.We discuss what we're going to build and then deliver. 
+\n\n
+For us,it's about ensuring the client gets their bang for buck no matter how big the project is.\n\n
+We're not interested in leading you on a chase,We tell you how it is,present options and then work together to achieve a common goal"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/aboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/osmium" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout><!-- From: file:/C:/Users/DILAN/Downloads/Geo%20map/GeoMapApp1/GeoMapApp1/app/src/main/res/layout/fragment_aboutus.xml -->

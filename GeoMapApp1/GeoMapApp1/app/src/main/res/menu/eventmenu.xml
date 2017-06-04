@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    
+        <item
+    android:title="back"
+    android:id="@+id/settingsback"
+    android:numericShortcut="1"
+    android:alphabeticShortcut="a"
+    android:icon="@drawable/back"
+    android:showAsAction="always"/> 
+    
+
+      
+    <item
+    android:title="ok"
+    android:id="@+id/settingSave"
+    android:alphabeticShortcut="a"
+    android:icon="@drawable/correct"
+    android:showAsAction="always"/>
+
+       <item
+    android:title="cancel"
+    android:id="@+id/settingCancel"
+    android:numericShortcut="4"
+    android:alphabeticShortcut="a"
+    android:icon="@drawable/cross"
+    android:showAsAction="always"/>
+       
+</menu>

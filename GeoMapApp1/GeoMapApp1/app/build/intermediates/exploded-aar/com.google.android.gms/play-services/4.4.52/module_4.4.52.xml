@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_4.4.52" default="compile.module.4.4.52">
+  <dirname property="module.4.4.52.basedir" file="${ant.file.module_4.4.52}"/>
+  
+  <property name="module.jdk.home.4.4.52" value="${jdk.home.android_api_21_platform}"/>
+  <property name="module.jdk.bin.4.4.52" value="${jdk.bin.android_api_21_platform}"/>
+  <property name="module.jdk.classpath.4.4.52" value="jdk.classpath.android_api_21_platform"/>
+  
+  <property name="compiler.args.4.4.52" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="4.4.52.output.dir" value="${module.4.4.52.basedir}/../../../../../../../../../out/production/4.4.52"/>
+  <property name="4.4.52.testoutput.dir" value="${module.4.4.52.basedir}/../../../../../../../../../out/test/4.4.52"/>
+  
+  <path id="4.4.52.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="4.4.52.module.production.classpath">
+    <path refid="${module.jdk.classpath.4.4.52}"/>
+  </path>
+  
+  <path id="4.4.52.runtime.production.module.classpath">
+    <pathelement location="${4.4.52.output.dir}"/>
+  </path>
+  
+  <path id="4.4.52.module.classpath">
+    <path refid="${module.jdk.classpath.4.4.52}"/>
+    <pathelement location="${4.4.52.output.dir}"/>
+  </path>
+  
+  <path id="4.4.52.runtime.module.classpath">
+    <pathelement location="${4.4.52.testoutput.dir}"/>
+    <pathelement location="${4.4.52.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.4.4.52">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.4.4.52">
+    <patternset refid="excluded.from.module.4.4.52"/>
+  </patternset>
+  
+  <path id="4.4.52.module.sourcepath">
+    <dirset dir="${module.4.4.52.basedir}">
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.4.4.52" depends="compile.module.4.4.52.production,compile.module.4.4.52.tests" description="Compile module 4.4.52"/>
+  
+  <target name="compile.module.4.4.52.production" depends="register.custom.compilers" description="Compile module 4.4.52; production classes">
+    <mkdir dir="${4.4.52.output.dir}"/>
+    <javac2 destdir="${4.4.52.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.4.4.52}/javac">
+      <compilerarg line="${compiler.args.4.4.52}"/>
+      <bootclasspath refid="4.4.52.module.bootclasspath"/>
+      <classpath refid="4.4.52.module.production.classpath"/>
+      <src refid="4.4.52.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.4.4.52"/>
+    </javac2>
+    
+    <copy todir="${4.4.52.output.dir}">
+      <fileset dir="${module.4.4.52.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.4.4.52.tests" depends="register.custom.compilers,compile.module.4.4.52.production" description="compile module 4.4.52; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.4.4.52" description="cleanup module">
+    <delete dir="${4.4.52.output.dir}"/>
+    <delete dir="${4.4.52.testoutput.dir}"/>
+  </target>
+</project>

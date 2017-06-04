@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_r" default="compile.module.r">
+  <dirname property="module.r.basedir" file="${ant.file.module_r}"/>
+  
+  <property name="module.jdk.home.r" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.r" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.r" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.r" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="r.output.dir" value="${module.r.basedir}/../../../../../../../out/production/r"/>
+  <property name="r.testoutput.dir" value="${module.r.basedir}/../../../../../../../out/test/r"/>
+  
+  <path id="r.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="r.module.production.classpath">
+    <path refid="${module.jdk.classpath.r}"/>
+  </path>
+  
+  <path id="r.runtime.production.module.classpath">
+    <pathelement location="${r.output.dir}"/>
+  </path>
+  
+  <path id="r.module.classpath">
+    <path refid="${module.jdk.classpath.r}"/>
+    <pathelement location="${r.output.dir}"/>
+  </path>
+  
+  <path id="r.runtime.module.classpath">
+    <pathelement location="${r.testoutput.dir}"/>
+    <pathelement location="${r.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.r">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.r">
+    <patternset refid="excluded.from.module.r"/>
+  </patternset>
+  
+  <path id="r.module.sourcepath">
+    <dirset dir="${module.r.basedir}">
+      <include name="debug"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.r" depends="compile.module.r.production,compile.module.r.tests" description="Compile module r"/>
+  
+  <target name="compile.module.r.production" depends="register.custom.compilers" description="Compile module r; production classes">
+    <mkdir dir="${r.output.dir}"/>
+    <javac2 destdir="${r.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.r}/javac">
+      <compilerarg line="${compiler.args.r}"/>
+      <bootclasspath refid="r.module.bootclasspath"/>
+      <classpath refid="r.module.production.classpath"/>
+      <src refid="r.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.r"/>
+    </javac2>
+    
+    <copy todir="${r.output.dir}">
+      <fileset dir="${module.r.basedir}/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.r.tests" depends="register.custom.compilers,compile.module.r.production" description="compile module r; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.r" description="cleanup module">
+    <delete dir="${r.output.dir}"/>
+    <delete dir="${r.testoutput.dir}"/>
+  </target>
+</project>

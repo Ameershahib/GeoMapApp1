@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+   >
+
+    <TextView
+        android:id="@+id/txtEventName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:text="Result"
+        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+      />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtEventName"
+        android:layout_marginTop="26dp"
+        android:text="Event Description"
+        android:textColor="#fffffff9"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="#46000000"
+        />
+
+    <TextView
+        android:id="@+id/txtEventDesc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:text="Result"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView4"
+        android:text="Result"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <TextView
+        android:id="@+id/txtPlaceDesc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:text="Result"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtPlaceDesc"
+        android:layout_marginTop="20dp"
+        android:text="Status"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#fffffff9"
+        android:background="#46000000"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#fffffff9"
+        android:background="#46000000"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtPlaceDesc"
+        android:layout_below="@+id/txtEventDesc"
+        android:layout_marginTop="20dp"
+        android:text="Place Description"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#fffffff9"
+        android:background="#46000000"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/notesuccess1" />
+
+    <Button
+        android:id="@+id/btnNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@android:string/ok" 
+        android:background="@drawable/buttonselecter"
+        android:textColor="#707070" 
+        />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtStatus"
+        android:layout_marginTop="17dp"
+        android:text="Next Date"
+         android:textColor="#fffffff9"
+        android:background="#46000000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/txtNextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView5"
+        android:text="Result"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

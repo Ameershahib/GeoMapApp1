@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_buildconfig" default="compile.module.buildconfig">
+  <dirname property="module.buildconfig.basedir" file="${ant.file.module_buildconfig}"/>
+  
+  <property name="module.jdk.home.buildconfig" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.buildconfig" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.buildconfig" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.buildconfig" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="buildconfig.output.dir" value="${module.buildconfig.basedir}/../../../../../../../out/production/buildConfig"/>
+  <property name="buildconfig.testoutput.dir" value="${module.buildconfig.basedir}/../../../../../../../out/test/buildConfig"/>
+  
+  <path id="buildconfig.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="buildconfig.module.production.classpath">
+    <path refid="${module.jdk.classpath.buildconfig}"/>
+  </path>
+  
+  <path id="buildconfig.runtime.production.module.classpath">
+    <pathelement location="${buildconfig.output.dir}"/>
+  </path>
+  
+  <path id="buildconfig.module.classpath">
+    <path refid="${module.jdk.classpath.buildconfig}"/>
+    <pathelement location="${buildconfig.output.dir}"/>
+  </path>
+  
+  <path id="buildconfig.runtime.module.classpath">
+    <pathelement location="${buildconfig.testoutput.dir}"/>
+    <pathelement location="${buildconfig.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.buildconfig">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.buildconfig">
+    <patternset refid="excluded.from.module.buildconfig"/>
+  </patternset>
+  
+  <path id="buildconfig.module.sourcepath">
+    <dirset dir="${module.buildconfig.basedir}">
+      <include name="debug"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.buildconfig" depends="compile.module.buildconfig.production,compile.module.buildconfig.tests" description="Compile module buildConfig"/>
+  
+  <target name="compile.module.buildconfig.production" depends="register.custom.compilers" description="Compile module buildConfig; production classes">
+    <mkdir dir="${buildconfig.output.dir}"/>
+    <javac2 destdir="${buildconfig.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.buildconfig}/javac">
+      <compilerarg line="${compiler.args.buildconfig}"/>
+      <bootclasspath refid="buildconfig.module.bootclasspath"/>
+      <classpath refid="buildconfig.module.production.classpath"/>
+      <src refid="buildconfig.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.buildconfig"/>
+    </javac2>
+    
+    <copy todir="${buildconfig.output.dir}">
+      <fileset dir="${module.buildconfig.basedir}/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.buildconfig.tests" depends="register.custom.compilers,compile.module.buildconfig.production" description="compile module buildConfig; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.buildconfig" description="cleanup module">
+    <delete dir="${buildconfig.output.dir}"/>
+    <delete dir="${buildconfig.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:layout_marginLeft="2dp"
+	android:layout_marginBottom="1dp"
+	xmlns:mySwitch="http://schemas.android.com/apk/res-auto"
+	
+ >
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="45dp" >
+
+        <RadioButton
+            android:id="@+id/radiosetEventRepeating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/customradio"
+            android:text=" Repeating" />
+
+        <RadioButton
+            android:id="@+id/radiosetEventCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableLeft="@drawable/customradio"
+            android:text=" Custom Dates" />
+
+        <RadioButton
+            android:id="@+id/radiosetEventOnetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableLeft="@drawable/customradio"
+            android:text=" One Time" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginTop="18dp"
+        android:text="Remind me when I.."
+        android:textColor="#FE2E2E"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/optionalchIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/radioGroup1"
+        android:layout_below="@+id/textView1"
+        android:button="@drawable/custom_checkbox_design"
+        android:checked="true"
+        android:text=" In" />
+
+    <CheckBox
+        android:id="@+id/optionalchOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/optionalchIn"
+        android:layout_below="@+id/optionalchIn"
+        android:button="@drawable/custom_checkbox_design"
+        android:text=" Out" />
+
+    <Button
+        android:id="@+id/btnOptionalCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnOptionalOK"
+        android:layout_alignBottom="@+id/btnOptionalOK"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="Cancel" 
+         android:background="@drawable/buttonselecter"
+         android:textColor="#707070"/>
+
+  <ToggleButton
+      android:id="@+id/toggleButton1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:background="@drawable/selecter2"
+        android:textOff=""
+        android:textOn=""
+      />
+
+  <Button
+      android:id="@+id/btnOptionalOK"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_below="@+id/optionalchOut"
+      android:layout_marginTop="23dp"
+      android:background="@drawable/buttonselecter"
+      android:text="OK"
+      android:textColor="#707070" />
+
+</RelativeLayout>

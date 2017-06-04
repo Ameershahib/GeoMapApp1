@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mySwitch="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="464dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Sounds and Vibrations"
+              
+                android:textColor="#FFFFFF"
+                android:background="#A4A4A4" />
+
+            <CheckBox
+                android:id="@+id/chSettingsAlarmSound"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="  Alarm Sound"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_checkbox_design"
+                android:layout_below="@+id/textView1"
+                android:layout_alignLeft="@+id/textView3"
+                android:drawableLeft="@drawable/setalarmsound"
+                 android:textAppearance="?android:attr/textAppearanceSmall"
+               />
+
+            <CheckBox
+                android:id="@+id/chSettingsAlarmVibration"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableRight="@drawable/custom_checkbox_design"
+                android:text="  Vibration"
+                android:layout_below="@+id/chSettingsAlarmSound"
+                android:layout_alignLeft="@+id/chSettingsAlarmSound"
+                android:layout_alignStart="@+id/chSettingsAlarmSound"
+                android:drawableLeft="@drawable/settingsvibra" 
+                 android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView2" >
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignStart="@+id/chSettingsAlarmVibration"
+                android:layout_below="@+id/chSettingsAlarmVibration"
+                android:layout_marginTop="28dp"
+                android:text="SMS and Email"
+                android:textColor="#FFFFFF"
+                android:background="#A4A4A4" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="GPS"
+                android:textColor="#FFFFFF"
+                android:background="#A4A4A4"
+                android:layout_below="@+id/chSettingsSMS"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="52dp" />
+
+            <ToggleButton
+                android:background="@drawable/selecter2"
+       	 		android:textOff=""
+        		android:textOn=""
+                android:id="@+id/togglesmsemail"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:layout_marginLeft="31dp"
+                android:layout_below="@+id/radioGroup1"
+                android:layout_toRightOf="@+id/radioGroup1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="  SMS"
+                android:id="@+id/chSettingsSMS"
+                android:layout_below="@+id/togglesmsemail"
+                android:layout_toRightOf="@+id/radioGroup1"
+                android:checked="false" 
+                 android:button="@null"
+                android:drawableRight="@drawable/custom_checkbox_design"
+                android:drawableLeft="@drawable/settingssms"
+                 android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="  Email"
+                android:id="@+id/chSettingsEmail"
+                android:layout_below="@+id/chSettingsSMS"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false" 
+                android:button="@null"
+                android:drawableRight="@drawable/custom_checkbox_design"
+                android:drawableLeft="@drawable/settingemail"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <ToggleButton
+             
+                android:id="@+id/toggleenablegps"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selecter2"
+        		android:textOff=""
+        		android:textOn=""
+                android:checked="true"
+                android:layout_below="@+id/textView"
+                android:layout_alignLeft="@+id/togglesmsemail"
+                android:layout_alignStart="@+id/togglesmsemail"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Note:To get the optimized best results enable GPS"
+                android:id="@+id/textView"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
